@@ -1,0 +1,211 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at 20% 30%, #1e3a8a, transparent 40%),
+                radial-gradient(circle at 80% 70%, #7c3aed, transparent 40%),
+                #0f172a;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    padding: 20px 50px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 120px 20px 80px 20px;
+    animation: fadeUp 1s ease forwards;
+}
+
+.hero h1 {
+    font-size: 56px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: linear-gradient(90deg, #ffffff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-top: 15px;
+    opacity: 0.7;
+}
+
+/* Search Card */
+.search-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+
+.search-card {
+    display: flex;
+    gap: 15px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    transition: 0.4s ease;
+}
+
+.search-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
+/* Inputs */
+.search-card input {
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 14px;
+    min-width: 160px;
+    transition: 0.3s;
+}
+
+.search-card input:focus {
+    outline: none;
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 0 15px #6366f1;
+}
+
+/* Button */
+.search-card button {
+    padding: 14px 25px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    background: linear-gradient(45deg, #6366f1, #7c3aed);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-card button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #7c3aed;
+}
+
+/* Ride Grid */
+.rides-section {
+    padding: 0 80px 120px 80px;
+}
+
+.ride-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.ride-card {
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    transition: 0.4s ease;
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.ride-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 25px 70px rgba(0,0,0,0.5);
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.create-btn {
+    background: linear-gradient(45deg, #6366f1, #7c3aed);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.create-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #7c3aed;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(25px);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 380px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    animation: scaleUp 0.3s ease;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+}
+
+.modal-content input {
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 14px;
+}
+
+.modal-content input:focus {
+    outline: none;
+    box-shadow: 0 0 15px #7c3aed;
+}
+
+.modal-content button {
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    font-weight: 600;
+    background: linear-gradient(45deg, #6366f1, #7c3aed);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-content button:hover {
+    transform: scale(1.05);
+}
+
+.close {
+    align-self: flex-end;
+    cursor: pointer;
+    font-size: 18px;
+}

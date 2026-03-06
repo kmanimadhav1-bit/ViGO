@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CampusRide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">CampusRide 🚕</div>
+    <button class="create-btn" onclick="openCreateModal()">+ Create Ride</button>
+</nav>
+
+<section class="hero">
+    <h1>Find Shared Rides Instantly</h1>
+    <p>Connect with students travelling to your destination</p>
+</section>
+
+<section class="search-section">
+    <div class="search-card">
+        <input id="search-destination" placeholder="Destination">
+        <input id="search-date" type="date">
+        <input id="search-start" type="number" placeholder="Start Hour">
+        <input id="search-end" type="number" placeholder="End Hour">
+        <button onclick="searchRides()">Search</button>
+    </div>
+</section>
+
+<section class="rides-section">
+    <div id="results" class="ride-grid"></div>
+</section>
+
+<!-- Create Ride Modal -->
+ 
+<div id="createModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeCreateModal()">×</span>
+        <h2>Create Ride</h2>
+        <input id="create-name" placeholder="Your Name">
+        <input id="create-contact" placeholder="Contact">
+        <input id="create-destination" placeholder="Destination">
+        <input id="create-date" type="date">
+        <input id="create-start" type="number" placeholder="Start Hour">
+        <input id="create-end" type="number" placeholder="End Hour">
+        <input id="create-seats" type="number" placeholder="Seats Available">
+        <button onclick="createRide()">Create Ride</button>
+    </div>
+</div>
+
+<!-- Join Ride Modal -->
+<div id="joinModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeJoinModal()">×</span>
+        <h2>Join Ride</h2>
+        <input id="join-name" placeholder="Your Name">
+        <input id="join-contact" placeholder="Contact">
+        <button onclick="confirmJoinRide()">Join Ride</button>
+    </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
